@@ -1,0 +1,8 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","4446","verify login with invalid credentials","chromium","2026-03-10","passed","2026-03-10","","login.spec.js","",""
+"","7845","login with valid credentials @sanity","chromium","2026-03-10","passed","2026-03-10","","login.spec.js","",""
+"","7359","verify the setting button functionality","chromium","2026-03-10","passed","2026-03-10","","Setting.spec.js","",""
+"","4700","verify the forgot button functionality","chromium","2026-03-10","passed","2026-03-10","","login.spec.js","",""
+"","4782","verify login data with empty fields","chromium","2026-03-10","passed","2026-03-10","","login.spec.js","",""
+"","1028","Verify the click functionality on myporjectbtn","chromium","2026-03-10","failed","2026-03-10","","Myprojects.spec.js","",""
+"","3178","Verify the click functionality on myproject btn","chromium","2026-03-10","failed","2026-03-10","","Myprojects.spec.js","",""

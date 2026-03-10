@@ -1,0 +1,69 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - img "X-MED"
+        - searchbox "Search" [ref=e10]
+        - navigation [ref=e11]:
+          - button "AI" [ref=e12] [cursor=pointer]:
+            - generic [ref=e18]: AI
+          - button [ref=e23] [cursor=pointer]:
+            - img [ref=e24]
+          - button "VA" [ref=e32]:
+            - generic [ref=e34]: VA
+            - img [ref=e35]
+    - generic [ref=e37]:
+      - navigation "Primary" [ref=e38]:
+        - list [ref=e39]:
+          - listitem [ref=e40]:
+            - link "Dashboard" [ref=e41] [cursor=pointer]:
+              - /url: /dashboard
+              - img [ref=e42]
+          - listitem [ref=e47]:
+            - link "My Works" [ref=e48] [cursor=pointer]:
+              - /url: /project/all
+              - img [ref=e49]
+          - listitem [ref=e51]:
+            - link "My Projects" [ref=e52] [cursor=pointer]:
+              - /url: /projects
+              - img [ref=e53]
+          - listitem [ref=e55]:
+            - link "Reports" [ref=e56] [cursor=pointer]:
+              - /url: /reports
+              - img [ref=e57]
+          - listitem [ref=e59]:
+            - link "Settings" [ref=e60] [cursor=pointer]:
+              - /url: /settings
+              - img [ref=e61]
+          - listitem [ref=e64]:
+            - link "Security" [ref=e65] [cursor=pointer]:
+              - /url: /security
+              - img [ref=e66]
+          - listitem [ref=e68]:
+            - link "Admin" [ref=e69] [cursor=pointer]:
+              - /url: /admindashboard
+              - img [ref=e70]
+          - listitem [ref=e74]:
+            - link "CR Approval" [ref=e75] [cursor=pointer]:
+              - /url: /changerequests
+              - img [ref=e76]
+          - listitem [ref=e79]:
+            - link "Templates" [ref=e80] [cursor=pointer]:
+              - /url: /templates
+              - img [ref=e81]
+        - button "Toggle theme" [ref=e87]:
+          - img [ref=e88]
+      - main [ref=e91]:
+        - generic [ref=e98]: X - MED
+  - region "Notifications Alt+T":
+    - alert [ref=e100] [cursor=pointer]:
+      - img [ref=e102]
+      - text: Login successful.
+      - button "close" [ref=e104]:
+        - img [ref=e105]
+      - progressbar "notification timer" [ref=e109]
+```
