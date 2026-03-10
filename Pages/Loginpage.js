@@ -42,7 +42,7 @@ class Loginpage {
     async clickForgotPassword()
     {
         await this.forgotbtn.waitFor({state:'visible'})
-        await this.forgotbtn.click();
+        await this.forgotbtn.click(); ////////dfdfdffsdsdsfsddsds
     }
 
      
