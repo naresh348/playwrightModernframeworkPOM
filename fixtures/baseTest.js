@@ -12,12 +12,10 @@ exports.test = base.test.extend({
 
         const loginPage = new LoginPage(page);
 
-        console.log("Test Started");
 
         await loginPage.goto('/');
 
         await use(loginPage);
-        console.log("Test completed");
 
     },
 
@@ -26,7 +24,7 @@ exports.test = base.test.extend({
 
         console.log("Test Started");
 
-        await loginPage.validlogin(
+        await loginPage.validLogin(
             testdata.validUser.username,
             testdata.validUser.password
         );
@@ -35,6 +33,7 @@ exports.test = base.test.extend({
 
         await use(loginPage);
         console.log("Test completed");
+
     },
 
 

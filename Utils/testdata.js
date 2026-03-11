@@ -8,6 +8,9 @@ const testdata =
     invalidUser: {
         username: "admin@gmail.com",
         password: "hssfgjj"
-    }
+    },
+    product : "HVAC",
+    projectname:"incident12",
+    options:"Not Yet Started"
 }
 module.exports= testdata;
