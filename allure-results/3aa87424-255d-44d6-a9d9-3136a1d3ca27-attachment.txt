@@ -1,3 +1,0 @@
-Test Started
-Toast message: Email is required
-Test completed

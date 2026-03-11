@@ -4,11 +4,10 @@ const testdata = require("../Utils/testdata");
 
 
 
-test("login with valid credentials @sanity", async ({ loginPage }) => {
-    const text = await this.toastermsg.textContent()
+test("@sanity login with valid credentials ", async ({ loggedInPage }) => {
+    const text = await loggedInPage.getToastMessage();
     console.log("Toast message:", text)
-    expect(text).toContain(message);
-    await loginPage.Toastermsg("Login successful");
+    expect(text).toMatch(/Login successful/i);
 });
 
 test("verify login with invalid credentials", async ({ loginPage }) => {
@@ -19,7 +18,7 @@ test("verify login with invalid credentials", async ({ loginPage }) => {
     expect(text).toContain("Please enter valid Email Address.");    
 });
 
-test.only("verify login data with empty fields", async ({ loginPage }) => {
+test("verify login data with empty fields", async ({ loginPage }) => {
     await loginPage.Signinbtn();
     const text = await loginPage.getToastMessage();
     console.log("Toast message:", text)
@@ -27,5 +26,6 @@ test.only("verify login data with empty fields", async ({ loginPage }) => {
 });
 
 test("verify the forgot button functionality", async ({ loginPage }) => {
-    await loginPage.Forgotbtn();
+    await loginPage.clickForgotPassword();
+    expect(loginPage.page).toHaveURL("https://x-med.in/forgot-pwd");
 });
