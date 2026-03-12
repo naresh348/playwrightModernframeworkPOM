@@ -14,8 +14,10 @@
   "type": "commonjs",
   "devDependencies": {
     "@playwright/test": "^1.58.2",
-    "@types/node": "^25.3.5",
+    "@types/node": "^25.4.0",
     "allure-commandline": "^2.37.0",
-    "allure-playwright": "^3.6.0"
+    "allure-playwright": "^3.6.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
   }
 }
