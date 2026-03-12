@@ -1,0 +1,44 @@
+{
+  "name": "modernframework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sanity": "npx playwright test --grep @sanity --headed",
+    "test": "npx playwright test",
+    "regression": "npx playwright test --grep @regression"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.4.0",
+    "allure-commandline": "^2.37.0",
+    "allure-playwright": "^3.6.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "acorn": "^8.16.0",
+    "acorn-walk": "^8.3.5",
+    "allure-js-commons": "^3.6.0",
+    "arg": "^4.1.3",
+    "charenc": "^0.0.2",
+    "create-require": "^1.1.1",
+    "crypt": "^0.0.2",
+    "diff": "^4.0.4",
+    "is-buffer": "^1.1.6",
+    "make-error": "^1.3.6",
+    "md5": "^2.3.0",
+    "playwright": "^1.58.2",
+    "playwright-core": "^1.58.2",
+    "undici-types": "^7.18.2",
+    "v8-compile-cache-lib": "^3.0.1",
+    "yn": "^3.1.1"
+  }
+}
