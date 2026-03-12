@@ -8,7 +8,7 @@ test.beforeEach(async ({ myProjectsPage,loggedInPage }) => {
 
 });
 
-test.only("Verify the click functionality on myproject btn",
+test("Verify the click functionality on myproject btn",
 async ({ myProjectsPage  }) => {
 
     await expect(myProjectsPage.projectslist.first()).toBeVisible();

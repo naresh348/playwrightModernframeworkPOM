@@ -1,6 +1,5 @@
-const testdata = require("../Utils/testdata");
-const { Mywork, test } = require("../fixtures/baseTest")
-const { expect } = require("@playwright/test")
+import { test, expect } from '../fixtures/baseTest';
+import testdata from "../Utils/testdata";
 
 
 test("verify the Comment Button functionality @sanity", async ({ Mywork, loggedInPage }) => {
@@ -9,7 +8,7 @@ test("verify the Comment Button functionality @sanity", async ({ Mywork, loggedI
 
 })
 
-test.only("verify the dropdown button fucntionaity on all projects", async ({ Mywork,loggedInPage }) => {
+test("verify the dropdown button fucntionaity on all projects", async ({ Mywork,loggedInPage }) => {
       
        const projects = await Mywork.allProjectDropdown();
        console.log(projects);
