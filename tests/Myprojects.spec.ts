@@ -1,5 +1,5 @@
-const { test, expect } = require("../fixtures/baseTest");
-const testdata = require("../Utils/testdata");
+import { test, expect } from '../fixtures/baseTest';
+import testdata from "../Utils/testdata";
 
 
 test.beforeEach(async ({ myProjectsPage,loggedInPage }) => {
@@ -8,7 +8,7 @@ test.beforeEach(async ({ myProjectsPage,loggedInPage }) => {
 
 });
 
-test("Verify the click functionality on myproject btn",
+test.only("Verify the click functionality on myproject btn",
 async ({ myProjectsPage  }) => {
 
     await expect(myProjectsPage.projectslist.first()).toBeVisible();
@@ -68,7 +68,7 @@ test("Verify options under phase filter sections",async ({myProjectsPage})=>
     
 })
 
-test.only("Verify phase filter option selection",async ({myProjectsPage})=>
+test("Verify phase filter option selection",async ({myProjectsPage})=>
 {
     await myProjectsPage.clickOnSpecificProjectDetailPage(testdata.projectname);
     await myProjectsPage.viewBtn();
