@@ -1,5 +1,5 @@
-const {expect,test} = require("../fixtures/baseTest")
-const testdata =require("../Utils/testdata")
+import { test, expect } from '../fixtures/baseTest';
+import testdata from "../Utils/testdata";
 
 
 test("verify the setting button functionality @sanity",async({Settingpg,loggedInPage})=>

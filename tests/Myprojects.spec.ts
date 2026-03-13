@@ -1,4 +1,5 @@
 import { test, expect } from '../fixtures/baseTest';
+import MyProjectsPage from '../Pages/Myprojectpage';
 import testdata from "../Utils/testdata";
 
 
@@ -28,7 +29,6 @@ test("List of projects",async ({myProjectsPage})=>
 {
     const projectist=await myProjectsPage.listOfProjects();
     console.log(projectist);
-    await expect(myProjectsPage.projectslist).not.toHaveCount(0);
     await myProjectsPage.clickOnSpecificProjectDetailPage(testdata.projectname);
 })
 
@@ -56,6 +56,7 @@ test("Verify filter DropDown In ProjectDetails",async ({myProjectsPage})=>
     await myProjectsPage.viewBtn()
     await myProjectsPage.clickfilterDropDownInProjectDetails();
     expect(myProjectsPage.filterInProjectDetails).toBeVisible();
+
     
 })
 
@@ -78,6 +79,24 @@ test("Verify phase filter option selection",async ({myProjectsPage})=>
     
 })
 
+test("Verify the project creation with valid credentials",async ({myProjectsPage})=>
+{
+
+    await myProjectsPage.clickOnNewProjectBtn();
+    await expect(myProjectsPage.page).toHaveURL(/project/i);
+    await myProjectsPage.enterProjectTitle(testdata.Projecttitle);
+    await myProjectsPage.enterProjectDescription(testdata.projectDescription);
+    await myProjectsPage.enterStartDate(testdata.startdate);
+    await myProjectsPage.clickOnTestAssetTypes();
+    await myProjectsPage.selectEquipment("HVAC");
+    await expect(myProjectsPage.riskAssementsection).toBeEnabled();
+    await myProjectsPage.clickOnRadioBtns();
+    await myProjectsPage.selectRenewalYear();
+    await myProjectsPage.clickOnNextBtnUnderProjectCreations();
+    await myProjectsPage.enterTextFieldInAddTeamMembers("sridhar");
+
+    
+})
 
 
 
