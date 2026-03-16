@@ -1,5 +1,5 @@
 const env={
-     qa:"https://x-med.in/",
+    qa:"https://x-med.in/",
     prod:"https://x-med.in/",
     dev:"https://x-med.in/",
     stage:"https://x-med.in/" 
