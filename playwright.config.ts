@@ -44,14 +44,14 @@ export default defineConfig({
         browserName: 'chromium'
         //...devices['iPhone 12 Mini']
       }
-    },
-
-    {
-      name: 'firefox',
-      use: {
-        browserName: 'firefox',
-      }
-
     }
+
+    // {
+    //   name: 'firefox',
+    //   use: {
+    //     browserName: 'firefox',
+    //   }
+
+    // }
   ]
 });
