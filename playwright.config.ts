@@ -1,7 +1,10 @@
 import { defineConfig, devices } from '@playwright/test';
+import { BASE_URL } from './Utils/env.config';
+
 
 export default defineConfig({
   testDir: './tests',
+  timeout: 50000,
 
   fullyParallel: true,
 
@@ -20,7 +23,7 @@ export default defineConfig({
   ],
 
   use: {
-    baseURL: "https://x-med.in/",
+    baseURL: BASE_URL,
     trace: 'on-first-retry',
 
     viewport: null,
@@ -36,9 +39,19 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
+
       use: {
         browserName: 'chromium'
+        //...devices['iPhone 12 Mini']
       }
+    },
+
+    {
+      name: 'firefox',
+      use: {
+        browserName: 'firefox',
+      }
+
     }
   ]
 });

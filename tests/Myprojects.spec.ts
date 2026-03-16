@@ -37,7 +37,6 @@ test("verify Specific Project to be selected",async ({myProjectsPage})=>
 
     await myProjectsPage.clickOnSpecificProjectDetailPage(testdata.projectname);
     expect(myProjectsPage.page).toHaveURL(/Projects/i);
-    
 
 })
 
@@ -86,17 +85,68 @@ test("Verify the project creation with valid credentials",async ({myProjectsPage
     await expect(myProjectsPage.page).toHaveURL(/project/i);
     await myProjectsPage.enterProjectTitle(testdata.Projecttitle);
     await myProjectsPage.enterProjectDescription(testdata.projectDescription);
-    await myProjectsPage.enterStartDate(testdata.startdate);
+    await myProjectsPage.enterStartDate("18/12/2026");
     await myProjectsPage.clickOnTestAssetTypes();
     await myProjectsPage.selectEquipment("HVAC");
     await expect(myProjectsPage.riskAssementsection).toBeEnabled();
     await myProjectsPage.clickOnRadioBtns();
     await myProjectsPage.selectRenewalYear();
     await myProjectsPage.clickOnNextBtnUnderProjectCreations();
-    await myProjectsPage.enterTextFieldInAddTeamMembers("sridhar");
-
+    await myProjectsPage.enterTextFieldInAddTeamMembers("sridhar","venkat","Naveen","Vinay");
+    await myProjectsPage.uploadFiles();
+    await expect(myProjectsPage.verifyuploadedFile("cccc.txt")).toBeTruthy();
+    await myProjectsPage.uploadCrForm();
+    await expect(await myProjectsPage.verifyUploadCrForm()).toContain("n.pdf");
+    await myProjectsPage.enterChangeRequestNumber("33333");
+    await myProjectsPage.clickOnSubmitBtn();
+    await expect(await myProjectsPage.getToastMessage()).toContain("Successfull");
+   
     
 })
+
+
+test("Verify the project creation with Already exits project",async ({myProjectsPage})=>
+{
+
+    await myProjectsPage.clickOnNewProjectBtn();
+    await expect(myProjectsPage.page).toHaveURL(/project/i);
+    await myProjectsPage.enterProjectTitle(testdata.Projecttitle);
+    await myProjectsPage.enterProjectDescription(testdata.projectDescription);
+    await myProjectsPage.enterStartDate("18/12/2026");
+    await myProjectsPage.clickOnTestAssetTypes();
+    await myProjectsPage.selectEquipment("HVAC");
+    await expect(myProjectsPage.riskAssementsection).toBeEnabled();
+    await myProjectsPage.clickOnRadioBtns();
+    await myProjectsPage.selectRenewalYear();
+    await myProjectsPage.clickOnNextBtnUnderProjectCreations();
+    await myProjectsPage.enterTextFieldInAddTeamMembers("sridhar","venkat","Naveen","Vinay");
+    await myProjectsPage.uploadFiles();
+    await expect(myProjectsPage.verifyuploadedFile("cccc.txt")).toBeTruthy();
+    await myProjectsPage.uploadCrForm();
+    await expect(await myProjectsPage.verifyUploadCrForm()).toContain("n.pdf");
+    await myProjectsPage.enterChangeRequestNumber("33333");
+    await myProjectsPage.clickOnSubmitBtn();
+    await expect(await myProjectsPage.getToastMessage()).toContain("already");
+   
+    
+})
+
+
+test.only("verify the project creation without entering valid fields",async ({myProjectsPage})=>
+{
+    await myProjectsPage.clickOnNewProjectBtn();
+    await myProjectsPage.clickOnNextBtnUnderProjectCreations();
+    await expect(await myProjectsPage.getToastMessage()).toContain("title");
+
+
+})
+
+
+
+
+
+
+
 
 
 
