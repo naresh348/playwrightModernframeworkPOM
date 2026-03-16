@@ -16,7 +16,11 @@ export default class MyProjectsPage {
     nextBtn: Locator;
     riskAssementsection: Locator;
     addmembertxtfield:Locator;
-    sridharname:Locator;
+    teammembers:Locator;
+    uploadfiles:Locator;
+    submitBtn:Locator;
+    changeRequestNumber:Locator;
+    toastermsg: Locator;
 
 
     constructor(page: Page) {
@@ -35,7 +39,12 @@ export default class MyProjectsPage {
         this.nextBtn = page.getByRole('button', { name: 'Next' });
         this.riskAssementsection = page.getByText("Risk Assessment",{exact:true});
         this.addmembertxtfield = page.getByPlaceholder("Add team members...");
-        this.sridharname = page.getByRole('listbox');
+        this.teammembers = page.getByRole('listbox');
+        this.uploadfiles=page.getByText("Browse File");
+        this.submitBtn=page.getByRole('button',{name:'Submit'});
+        this.changeRequestNumber=page.getByPlaceholder("Enter change request number");
+        this.toastermsg = page.locator(".Toastify__toast");
+
 
     }
 
@@ -133,14 +142,68 @@ export default class MyProjectsPage {
         await this.page.locator(".mt-1.w-full").first().selectOption({index:1});
     }
 
-    async enterTextFieldInAddTeamMembers(addmember:any):Promise<void>
+    async enterTextFieldInAddTeamMembers(sirdhar:any,venkat:any,Naveen:string,Vinay:any):Promise<void>
     {
         await this.addmembertxtfield.waitFor({state:"visible"});
-        await this.addmembertxtfield.fill(addmember);
-        await this.sridharname.locator('div:has-text("Sridhar")').filter({hasText: 'Business Owner'}).first().click();
+        await this.addmembertxtfield.fill(sirdhar);
+        await this.teammembers.locator('div:has-text("Sridhar")').filter({hasText: 'Business Owner'}).first().click();
+        await this.addmembertxtfield.clear();
+        await this.addmembertxtfield.fill(venkat);
+        await this.teammembers.locator('div:has-text("Venkat")').filter({hasText: 'QA'}).first().click();
+        await this.addmembertxtfield.clear();
+        await this.addmembertxtfield.fill(Naveen);
+        await this.teammembers.locator('div:has-text("Naveen")').filter({hasText: 'System Owner'}).first().click();
+        await this.addmembertxtfield.clear();
+        await this.addmembertxtfield.fill(Vinay);
+        await this.teammembers.locator('div:has-text("Vinay A")').filter({hasText: 'Admin'}).first().click();
+
+
     }
 
+    async uploadFiles():Promise<void>
+    {
+    //     await  this.uploadfiles.waitFor({state:"visible"});
+    //     await this.uploadfiles.click();
+    //     await this.uploadfiles.setInputFiles("C:\\Users\\naresh");
+    //
+   const uploadfiles = this.page.locator('input[type="file"]').first();
+    await uploadfiles.setInputFiles(["C:\\Users\\naresh\\Documents\\cccc.txt","C:\\Users\\naresh\\Documents\\Name.txt"]);
 
+    
+}
 
+    verifyuploadedFile(fileName: string) {
+    const filename= this.page.locator('li[role="group"] div', { hasText: fileName });
+    return filename;
+    }
+
+    async uploadCrForm():Promise<void>
+    {
+        const cruploads=this.page.getByLabel("Choose File");
+        await cruploads.setInputFiles(["C:\\Users\\naresh\\Documents\\n.pdf"]);
+    }
+
+    verifyUploadCrForm():Promise<string | null>
+    {
+        const filename1=this.page.locator(".max-w-\\[250px\\]");
+        return filename1.textContent();
+    }
+
+    async clickOnSubmitBtn():Promise<void>
+    {
+        await this.submitBtn.waitFor({state:"visible"})
+        await this.submitBtn.click();
+    }
+
+    async enterChangeRequestNumber(num:string):Promise<void>
+    {
+        await this.changeRequestNumber.waitFor({state:"visible"})
+        await this.changeRequestNumber.fill(num);
+    }
+
+     async getToastMessage(): Promise<string | null> {
+        await this.toastermsg.waitFor({ state: "visible" });
+        return await this.toastermsg.textContent();
+    }
 
 }
