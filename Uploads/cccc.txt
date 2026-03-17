@@ -1,0 +1,25 @@
+adb shell input text
+adb shell screencap /sdcard/.png
+adb pull /sdcard/.png
+adb shell screenrecord /sdcard/ .mp4
+adb pull /sdcard/ .mp4$db shell input text
+adb shell screencap /sdcard/.png
+adb pull /sdcard/.png
+adb shell screenrecord /sdcard/ .mp4adb shell dd if=/dev/zero of=/sdcard/myfile.dat bs=5500000 count=7000
+Here "xxxxxxxx" is the number of bytes. 1GB=1000000
+adb shell dumpsys package com.android.vending / packages
+adb devices
+adb install -r -d
+adb install-multiple -r -d 
+adb shell input text
+adb shell screencap /sdcard/.png
+adb pull /sdcard/.png
+adb shell screenrecord /sdcard/ .mp4
+adb pull /sdcard/ .mp4
+adb logcat >logcat.txt
+adb bugreport >bugreport.txt
+
+always25239439pass
+
+5419190441469064  0631 966
+
