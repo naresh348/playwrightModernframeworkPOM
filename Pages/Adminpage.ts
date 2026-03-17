@@ -12,5 +12,5 @@ export default class Adminpage {
 
     async clickOnAdminBtn() {
         await this.adminpagebtn.click();
-    }                                       
+    }                  ////ssss                     
 }   

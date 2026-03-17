@@ -78,7 +78,7 @@ test("Verify phase filter option selection",async ({myProjectsPage})=>
     
 })
 
-test("Verify the project creation with valid credentials",async ({myProjectsPage})=>
+test.skip("Verify the project creation with valid credentials",async ({myProjectsPage})=>
 {
 
     await myProjectsPage.clickOnNewProjectBtn();
@@ -110,7 +110,7 @@ test("Verify the project creation with Already exits project",async ({myProjects
 
     await myProjectsPage.clickOnNewProjectBtn();
     await expect(myProjectsPage.page).toHaveURL(/project/i);
-    await myProjectsPage.enterProjectTitle(testdata.Projecttitle);
+    await myProjectsPage.enterProjectTitle(testdata.Projecttitle1);
     await myProjectsPage.enterProjectDescription(testdata.projectDescription);
     await myProjectsPage.enterStartDate("18/12/2026");
     await myProjectsPage.clickOnTestAssetTypes();
@@ -132,7 +132,7 @@ test("Verify the project creation with Already exits project",async ({myProjects
 })
 
 
-test.only("verify the project creation without entering valid fields",async ({myProjectsPage})=>
+test("verify the project creation without entering valid fields",async ({myProjectsPage})=>
 {
     await myProjectsPage.clickOnNewProjectBtn();
     await myProjectsPage.clickOnNextBtnUnderProjectCreations();

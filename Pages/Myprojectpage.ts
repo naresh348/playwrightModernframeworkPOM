@@ -167,7 +167,7 @@ export default class MyProjectsPage {
     //     await this.uploadfiles.setInputFiles("C:\\Users\\naresh");
     //
    const uploadfiles = this.page.locator('input[type="file"]').first();
-    await uploadfiles.setInputFiles(["C:\\Users\\naresh\\Documents\\cccc.txt","C:\\Users\\naresh\\Documents\\Name.txt"]);
+    await uploadfiles.setInputFiles(["Uploads/cccc.txt"]);
 
     
 }
@@ -180,7 +180,7 @@ export default class MyProjectsPage {
     async uploadCrForm():Promise<void>
     {
         const cruploads=this.page.getByLabel("Choose File");
-        await cruploads.setInputFiles(["C:\\Users\\naresh\\Documents\\n.pdf"]);
+        await cruploads.setInputFiles(["Uploads/n.pdf"]);
     }
 
     verifyUploadCrForm():Promise<string | null>
