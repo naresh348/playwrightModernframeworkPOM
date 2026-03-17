@@ -4,7 +4,6 @@ import testdata from "../Utils/testdata";
 test("@sanity login with valid credentials", async ({ loggedInPage }) => {
     const text = await loggedInPage.getToastMessage();
     console.log("Toast message:", text);
-
     expect(text).toMatch(/Login successful/i);
 });
 
@@ -29,6 +28,7 @@ test("verify login data with empty fields", async ({ loginPage }) => {
 
 test("verify the forgot button functionality", async ({ loginPage }) => {
     await loginPage.clickForgotPassword();
+    await expect(loginPage.forgotbtn).toBeVisible();
 });
 
 test("verify check box is clickable under login page", async ({ loginPage }) => {

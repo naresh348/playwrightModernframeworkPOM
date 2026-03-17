@@ -78,28 +78,30 @@ test("Verify phase filter option selection",async ({myProjectsPage})=>
     
 })
 
-test.skip("Verify the project creation with valid credentials",async ({myProjectsPage})=>
+test("Verify the project creation with valid credentials",async ({myProjectsPage})=>
 {
 
     await myProjectsPage.clickOnNewProjectBtn();
     await expect(myProjectsPage.page).toHaveURL(/project/i);
     await myProjectsPage.enterProjectTitle(testdata.Projecttitle);
     await myProjectsPage.enterProjectDescription(testdata.projectDescription);
-    await myProjectsPage.enterStartDate("18/12/2026");
+    await myProjectsPage.enterStartDate(testdata.startdate);
     await myProjectsPage.clickOnTestAssetTypes();
+    await expect(myProjectsPage.testAssetTypes).toBeVisible();
     await myProjectsPage.selectEquipment("HVAC");
     await expect(myProjectsPage.riskAssementsection).toBeEnabled();
     await myProjectsPage.clickOnRadioBtns();
     await myProjectsPage.selectRenewalYear();
     await myProjectsPage.clickOnNextBtnUnderProjectCreations();
     await myProjectsPage.enterTextFieldInAddTeamMembers("sridhar","venkat","Naveen","Vinay");
+    await expect(myProjectsPage.addmembertxtfield).toBeVisible();
     await myProjectsPage.uploadFiles();
     await expect(myProjectsPage.verifyuploadedFile("cccc.txt")).toBeTruthy();
     await myProjectsPage.uploadCrForm();
     await expect(await myProjectsPage.verifyUploadCrForm()).toContain("n.pdf");
     await myProjectsPage.enterChangeRequestNumber("33333");
     await myProjectsPage.clickOnSubmitBtn();
-    await expect(await myProjectsPage.getToastMessage()).toContain("Successfull");
+    await expect(await myProjectsPage.getToastMessage()).toContain("successfully");
    
     
 })

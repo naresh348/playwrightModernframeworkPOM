@@ -24,6 +24,7 @@
     "test": "tests"
   },
   "dependencies": {
+    "@faker-js/faker": "^10.3.0",
     "acorn": "^8.16.0",
     "acorn-walk": "^8.3.5",
     "allure-js-commons": "^3.6.0",
