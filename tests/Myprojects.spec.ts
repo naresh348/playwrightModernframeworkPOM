@@ -105,7 +105,7 @@ test.skip("Verify the project creation with valid credentials",async ({myProject
 })
 
 
-test.only("Verify the project creation with Already exits project",async ({myProjectsPage})=>
+test("Verify the project creation with Already exits project",async ({myProjectsPage})=>
 {
 
     await myProjectsPage.clickOnNewProjectBtn();
