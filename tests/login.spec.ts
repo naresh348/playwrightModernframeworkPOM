@@ -26,7 +26,7 @@ test("verify login data with empty fields", async ({ loginPage }) => {
     expect(text).toContain("Email is required");
 });
 
-test.only("verify the forgot button functionality", async ({ loginPage }) => {
+test("verify the forgot button functionality", async ({ loginPage }) => {
     await loginPage.clickForgotPassword();
     await expect(loginPage.forgotbtn).toBeVisible();
 });
