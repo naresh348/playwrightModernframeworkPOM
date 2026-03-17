@@ -180,7 +180,7 @@ export default class MyProjectsPage {
     async uploadCrForm():Promise<void>
     {
         const cruploads=this.page.getByLabel("Choose File");
-        await cruploads.setInputFiles(["C:\\Users\\naresh\\Documents\\n.pdf"]);
+        await cruploads.setInputFiles(["C:/Users/naresh/Documents/playwrightModernframeworkPOM-dailywork/Uploads/n.pdf"]);
     }
 
     verifyUploadCrForm():Promise<string | null>
