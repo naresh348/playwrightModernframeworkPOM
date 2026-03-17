@@ -132,7 +132,7 @@ test("Verify the project creation with Already exits project",async ({myProjects
 })
 
 
-test.only("verify the project creation without entering valid fields",async ({myProjectsPage})=>
+test("verify the project creation without entering valid fields",async ({myProjectsPage})=>
 {
     await myProjectsPage.clickOnNewProjectBtn();
     await myProjectsPage.clickOnNextBtnUnderProjectCreations();
