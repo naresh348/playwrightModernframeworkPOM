@@ -78,7 +78,7 @@ test("Verify phase filter option selection",async ({myProjectsPage})=>
     
 })
 
-test.only("Verify the project creation with valid credentials",async ({myProjectsPage})=>
+test("Verify the project creation with valid credentials",async ({myProjectsPage})=>
 {
 
     await myProjectsPage.clickOnNewProjectBtn();
