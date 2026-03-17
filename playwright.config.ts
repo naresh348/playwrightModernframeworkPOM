@@ -42,7 +42,7 @@ export default defineConfig({
 
       use: {
         browserName: 'chromium'
-        //...devices['iPhone 12 Mini']
+       // ...devices['iPhone 12 Mini']
       }
     }
 
