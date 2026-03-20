@@ -29,7 +29,6 @@ test.only("collections", async ({ page }) => {
     const p = price.map(pri => pri.split(" ")[0]);
     console.log(p);
 
-    productMap.set(shortname,p)
 
     }
 
