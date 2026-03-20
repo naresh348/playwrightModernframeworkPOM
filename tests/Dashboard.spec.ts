@@ -32,7 +32,7 @@ test("should click on all project dropdown button", async ({ dashboard }) => {
 
 })
 
-test.only("should get all project names", async ({ dashboard }) => {
+test("should get all project names", async ({ dashboard }) => {
     await dashboard.clickOnAllProjectDropdown()
     const projects = await dashboard.getAllProjectName();    
     console.log(projects);
