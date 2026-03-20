@@ -7,6 +7,7 @@ import Myworkspage from '../Pages/Myworkspage';
 import Adminpage from '../Pages/Adminpage';
 import testdata from '../Utils/testdata';
 import CRapprovalpage from '../Pages/CRapprovalpage';
+import Dashboardpage from '../Pages/Dashboardpage'
 
 
 type MyFixtures = {
@@ -17,6 +18,7 @@ type MyFixtures = {
   Mywork: Myworkspage;
   admin: Adminpage;
   crapproval:CRapprovalpage;
+  dashboard:Dashboardpage;
 };
 
 export const test = base.extend<MyFixtures>({
@@ -72,6 +74,13 @@ export const test = base.extend<MyFixtures>({
        const crapproval = new CRapprovalpage(page);
        await use(crapproval);
     },
+
+
+    dashboard:async({page},use)=>
+    {
+        const dashboard=new Dashboardpage(page);
+        await use(dashboard);
+    }
 
  
 
