@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-test.only("collections", async ({ page }) => {
+test("collections", async ({ page }) => {
     await page.goto("https://www.flipkart.com/")
     await page.waitForTimeout(4000);
 
