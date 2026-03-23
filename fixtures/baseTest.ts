@@ -32,22 +32,7 @@ export const test = base.extend<MyFixtures>({
     await use(loginPage);
   },
 
-  // Logged-in fixture
-  loggedInPage: async ({ loginPage }, use) => {
-
-    console.log("Test Started");
-
-    await loginPage.validLogin(
-      testdata.validUser.username,
-      testdata.validUser.password
-    );
-
-    await loginPage.Signinbtn();
-
-    await use(loginPage);
-
-    console.log("Test completed");
-  },
+  
 
   myProjectsPage: async ({ page }, use) => {
     const myProjectsPage = new MyProjectsPage(page);
