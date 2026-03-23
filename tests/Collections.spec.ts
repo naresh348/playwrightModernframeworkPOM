@@ -134,7 +134,7 @@ test('drag & drop', async ({browser}) => {
 
 })
 
-test.only('Mouseaction', async ({browser}) => {
+test('Mouseaction', async ({browser}) => {
     const context = await browser.newContext();
     const parentpage = await context.newPage();
     await parentpage.goto("https://testautomationpractice.blogspot.com/");
@@ -144,11 +144,11 @@ test.only('Mouseaction', async ({browser}) => {
    // Focus and select text in field1
 await parentpage.locator('#field1').click();
 await parentpage.locator('#field1').press('Control+A'); // select all
-await parentpage.locator('#field1').press('Control+C'); // copy
+await parentpage.locator('#field1').press('Control+C');  //copy
 
 // Paste into field2
 await parentpage.locator('#field2').click();
-await parentpage.locator('#field2').press('Control+V'); // paste
+await parentpage.locator('#field2').press('Control+V'); 
 
 
     await parentpage.waitForTimeout(2000);
