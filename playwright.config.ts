@@ -11,7 +11,7 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
 
   //retries: process.env.CI ? 2 : 0,
-  retries:1,
+  retries: 1,
   workers: process.env.CI ? 1 : undefined,
 
   outputDir: 'test-results/',
@@ -42,7 +42,7 @@ export default defineConfig({
 
       use: {
         browserName: 'chromium'
-       // ...devices['iPhone 12 Mini']
+        // ...devices['iPhone 12 Mini']
       }
     }
 
