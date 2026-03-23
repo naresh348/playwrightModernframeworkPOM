@@ -53,8 +53,6 @@ test('page context', async ({ }) => {
     await childpage.getByRole('link',{name:'TypeScript For Playwright & Cypress'}).click();
 
     await parentpage.locator('#PopUp').click();
-    console.log(await page[2].title());
-    console.log(await page[3].title());
 
 
     await parentpage.waitForTimeout(10000);
