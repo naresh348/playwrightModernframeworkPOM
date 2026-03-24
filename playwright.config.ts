@@ -19,7 +19,9 @@ export default defineConfig({
   reporter: [
     ['list'],
     ['allure-playwright'],
-    ['html', { open: 'never' }]
+    ['html', { open: 'never' }],
+    ['html', { outputFolder: 'playwright-report', open: 'never' }],
+
   ],
 
   use: {
