@@ -7,7 +7,8 @@ import Myworkspage from '../Pages/Myworkspage';
 import Adminpage from '../Pages/Adminpage';
 import testdata from '../Utils/testdata';
 import CRapprovalpage from '../Pages/CRapprovalpage';
-import Dashboardpage from '../Pages/Dashboardpage'
+import Dashboardpage from '../Pages/Dashboardpage';
+import Templatepage from '../Pages/Templatepage';
 
 
 type MyFixtures = {
@@ -17,8 +18,10 @@ type MyFixtures = {
   Settingpg: Settingpage;
   Mywork: Myworkspage;
   admin: Adminpage;
-  crapproval:CRapprovalpage;
-  dashboard:Dashboardpage;
+  crapproval: CRapprovalpage;
+  dashboard: Dashboardpage;
+  template: Templatepage;
+
 };
 
 export const test = base.extend<MyFixtures>({
@@ -69,21 +72,22 @@ export const test = base.extend<MyFixtures>({
     await use(admin);
   },
 
-  crapproval:async({page},use)=>
-  {
-       const crapproval = new CRapprovalpage(page);
-       await use(crapproval);
-    },
+  crapproval: async ({ page }, use) => {
+    const crapproval = new CRapprovalpage(page);
+    await use(crapproval);
+  },
 
 
-    dashboard:async({page},use)=>
-    {
-        const dashboard=new Dashboardpage(page);
-        await use(dashboard);
-    }
+  dashboard: async ({ page }, use) => {
+    const dashboard = new Dashboardpage(page);
+    await use(dashboard);
+  },
 
- 
+  template: async ({ page }, use) => {
 
+    const template = new Templatepage(page);
+    await use(template)
+  }
 });
 
 export { expect };
