@@ -7,10 +7,11 @@ export default class Adminpage {
 
     constructor(page: Page) {
         this.page = page;
-        this.adminpagebtn = page.getByRole('link', { name: "Admin" });
+        this.adminpagebtn = page.getByRole('link', { name:'Admin' });
     }
 
     async clickOnAdminBtn() {
+        await this.adminpagebtn.waitFor({state:'visible'});
         await this.adminpagebtn.click();
-    }                  ////ssss                     
+    }                                    
 }   
