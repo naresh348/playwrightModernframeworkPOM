@@ -34,7 +34,6 @@ test("List of projects",async ({myProjectsPage})=>
 
 test("verify Specific Project to be selected",async ({myProjectsPage})=>
 {
-
     await myProjectsPage.clickOnSpecificProjectDetailPage(testdata.projectname);
     expect(myProjectsPage.page).toHaveURL(/Projects/i);
 

@@ -10,7 +10,7 @@ const testdata = {
   },
 
   product: "HVAC",
-  projectname: "ilo",
+  projectname: "HVACNEW",
   options: "Not Yet Started",
   Projecttitle1:"therminal11",
   Projecttitle:"therminaaaa", //for test run i have used valid credentials
