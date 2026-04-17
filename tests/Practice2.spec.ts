@@ -133,7 +133,7 @@ test('frames', async ({ page }) => {
     })
 
 
-    test.only('Date picker', async ({ page }) => {
+    test('Date picker', async ({ page }) => {
         await page.goto("https://letcode.in/test");
         await page.getByRole('link', { name: ' File management ' }).click();
         await page.locator('[type="file"]').setInputFiles(['Uploads/cccc.txt','Uploads/n.pdf'])
