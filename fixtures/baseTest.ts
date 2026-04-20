@@ -88,6 +88,9 @@ export const test = base.extend<MyFixtures>({
     const template = new Templatepage(page);
     await use(template)
   }
+
+
+
 });
 
 export { expect };
